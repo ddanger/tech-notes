@@ -1,6 +1,6 @@
 # Functional Architecture in JavaScript
 
-Slides [here]()
+Slides and maybe code in future [here](https://docs.google.com/presentation/d/1L5gxYQz2hyzbVJk5tkyNdDidf_cg4I1BlIGd_Y9jblU)
 
 - Monads don't compose so normalizing effect types throughout app is probably something you want to do
 
