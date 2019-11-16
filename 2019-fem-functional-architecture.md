@@ -23,6 +23,9 @@ const person = User({firstName: Bob, lastName: Jones})
 >The functions can be copied/pasted anywhere.
 >Typically we start with everything in the same file and copy/paste it into multiple files/folders as it becomes unmanagable
 
+His book versions
+https://mostly-adequate.gitbooks.io/mostly-adequate-guide/ and https://drboolean.gitbooks.io/mostly-adequate-guide-old/
+
 Exercises
 https://codepen.io/drboolean/pen/MpKpee
 
@@ -32,3 +35,14 @@ https://codepen.io/drboolean/pen/qeqpgB
 Exercises
 https://codepen.io/drboolean/pen/NQKByP
 
+FP Slack
+https://functionalprogramming.slack.com
+
+Strangest Tutorial Ever
+https://www.youtube.com/watch?v=RkDtMeZXMTA
+
+Oh Composable World (React Rally talk) Contramapping components example
+https://youtu.be/SfWR3dKnFIo?t=1226
+
+Source code for immutable-ext
+https://github.com/DrBoolean/immutable-ext/blob/master/index.js
