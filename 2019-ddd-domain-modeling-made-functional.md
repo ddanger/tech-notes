@@ -20,23 +20,25 @@
 
 <blockquote>The design is the code, and the code is the design</blockquote>
 
-Business events initiate business workflows
-Business events trigger commands which initiate business workflows which generate lists of events
-Event driven pipeline model as opposed to a "Layered" approach.
+- Business events initiate business workflows
+- Business events trigger commands which initiate business workflows which generate lists of events
+- Event driven pipeline model as opposed to a "Layered" approach.
 
-Problem space is the real world
-Solution space is the code.
-Must minimize the solution space. Don't model stuff that doesn't matter
-"Every program attempts to expand until it can read mail." Just. Don't!
+- Problem space is the real world
+- Solution space is the code.
+- Must minimize the solution space. Don't model stuff that doesn't matter
+- "Every program attempts to expand until it can read mail." Just. Don't!
 
-Customer: Marketing - someone with an email address, Finance - someone who owes us money
+- Customer:
+  - Marketing - someone with an email address
+  - Finance - someone who owes us money
 
 ## Domain Modeling
 - Not OO Modeling
 - Not DB Modeling
-Domain modeling comes after Event Storming. Event Storming is a mob exercise.
-Domain modeling results in something like:
-TicTacToe domain
+- Domain modeling comes after Event Storming. Event Storming is a mob exercise.
+- Domain modeling results in something like:
+- TicTacToe domain
 ```
 workflow NewGame =
   triggered by: NewGameRequest
@@ -69,14 +71,15 @@ data Player = Name AND Mark
 ## Intro to F#
 
 ## Functional Programming
-Functions like legos, Composition of functions (immutability is required)
-Ultimately you can build till you get: HTTP Request -> HTTP Response
-Types are not functions, they are just a name for a set of things
-A type could be a set of functions
-~Algebraic~ Composable Type system - new types are created from smaller ones with AND and OR
-type Snack = Apple of AppleVariety | Banana of BananaVariety
+- Functions like legos, Composition of functions (immutability is required)
+- Ultimately you can build till you get: HTTP Request -> HTTP Response
+- Types are not functions, they are just a name for a set of things
+- A type could be a set of functions
+- ~Algebraic~ Composable Type system - new types are created from smaller ones with AND and OR
+- type Snack = Apple of AppleVariety | Banana of BananaVariety
 
 What's the problem with this type:
+
 type Contact = {
   FirstName: string
   MiddleInitial: string
@@ -84,18 +87,20 @@ type Contact = {
   EmailAddress: string
   IsEmailVerified: bool
 }
-IsEmailVerified is a problem
-Booleans are red flag, we should have.
-It's a choice. Booleans don't convey that well.
-Business Rules are what we're trying to implement.
-We want to implement them in code in the type system, not in a comment or tribal knowledge
+
+- IsEmailVerified is a problem
+- Booleans are red flag, we should have.
+- It's a choice. Booleans don't convey that well.
+- Business Rules are what we're trying to implement.
+- We want to implement them in code in the type system, not in a comment or tribal knowledge
+```
 type VerifiedEmail = VerifiedEmail of EmailAddress
 type VerificationService =
   (EmailAddress * VerificationHash) -> VerifiedEmail option
 type EmailContactInfo =
   | Unverified of EmailAddress
   | Verified of VerifiedEmail
-
+```
 <blockquote>"Making illegal states unrepresentable"</blockquote>
 Why? So you don't have to write code or tests to check it.
 
